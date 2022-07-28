@@ -10,7 +10,7 @@ const HomeScreen = () => {
     const fetchProducts = async () => {
       const { data } = await axios.get('/api/products'); //destructure from res.data
 
-      setProducts(data); // changes useState([])
+      setProducts(data); // changes useState([]) on page load
     };
 
     fetchProducts();
