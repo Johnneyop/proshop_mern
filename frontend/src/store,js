@@ -1,9 +1,15 @@
-import { configureStore } from '@reduxjs/toolkit'
-import thunk from 'redux-thunk' // I still add this for my reference so I know thunk middleware is added
- 
+import { configureStore } from '@reduxjs/toolkit';
+import thunk from 'redux-thunk';
+import productsSlice from './slicers/productsSlice';
+
+const middleware = [thunk];
+
 const store = configureStore({
-    reducer: {},
-    preloadedState: {},
-    middleware: [thunk],
-})
- 
+  reducer: {
+    productsReducer: productsSlice,
+  },
+  preloadedState: {},
+  middleware,
+});
+
+export default store;
